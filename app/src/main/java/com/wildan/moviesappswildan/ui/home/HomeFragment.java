@@ -1,5 +1,6 @@
 package com.wildan.moviesappswildan.ui.home;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +15,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.wildan.moviesappswildan.Adapter.MoviesAdapter;
 import com.wildan.moviesappswildan.MainActivity;
+import com.wildan.moviesappswildan.Model.FavoriteMovies;
 import com.wildan.moviesappswildan.Model.Response;
 import com.wildan.moviesappswildan.Model.ResultsItem;
 import com.wildan.moviesappswildan.R;
 import com.wildan.moviesappswildan.Rest.ApiServices;
 import com.wildan.moviesappswildan.Rest.Client;
+import com.wildan.moviesappswildan.Room.AppDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +45,7 @@ public class HomeFragment extends Fragment {
     private MoviesAdapter moviePopularAdapter;
     private final List<ResultsItem> moviePopularResults = new ArrayList<>();
     RecyclerView rv_movies;
-
+    private AppDatabase db;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -49,7 +53,6 @@ public class HomeFragment extends Fragment {
         apiService = retrofit.create(ApiServices.class);
         getPopularMovies();
         rv_movies = root.findViewById(R.id.rv_movies);
-
         return root;
     }
     private void getPopularMovies() {
@@ -76,4 +79,6 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
+
 }

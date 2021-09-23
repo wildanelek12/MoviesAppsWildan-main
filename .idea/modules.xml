@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Movies_Apps_Wildan.iml" filepath="$PROJECT_DIR$/.idea/modules/Movies_Apps_Wildan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Movies_Apps_Wildan.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Movies_Apps_Wildan.app.iml" />
+    </modules>
+  </component>
+</project>
